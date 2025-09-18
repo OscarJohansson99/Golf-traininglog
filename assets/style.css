@@ -1,0 +1,9 @@
+import streamlit as st
+import os
+
+# Ladda in custom CSS
+try:
+    with open("assets/style.css", "r", encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+except FileNotFoundError:
+    st.warning("⚠️ Hittar inte assets/style.css – kontrollera mappen.")
